@@ -1,0 +1,12 @@
+{
+  "name": "neighbour-connect",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client/neighbour_connect_client\"",
+    "server": "npm run dev --prefix server",
+    "client": "npm run dev --prefix client/neighbour_connect_client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}

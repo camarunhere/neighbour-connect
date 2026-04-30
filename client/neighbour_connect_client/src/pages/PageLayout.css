@@ -1,0 +1,158 @@
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  animation: fadeInUp 0.4s var(--ease) both;
+}
+
+/* ─────────────────────────────────────────
+   PAGE HEADER
+───────────────────────────────────────── */
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--clr-border);
+  animation: slideInLeft 0.4s var(--ease) both;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--clr-text);
+  margin: 0 0 0.3rem;
+  letter-spacing: -0.4px;
+  position: relative;
+  display: inline-block;
+}
+
+.page-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--clr-primary), var(--clr-primary-light));
+  border-radius: 2px;
+}
+
+.page-header p {
+  font-size: 0.95rem;
+  color: var(--clr-text-muted);
+  margin: 0.5rem 0 0;
+  line-height: 1.5;
+}
+
+/* ─────────────────────────────────────────
+   NEW POST BUTTON
+───────────────────────────────────────── */
+.btn-primary {
+  background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-primary-dark) 100%);
+  color: #fff;
+  border: none;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: all 0.25s var(--ease-bounce);
+  box-shadow: var(--shadow-green);
+  letter-spacing: 0.2px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(44, 122, 75, 0.38);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────
+   FORM WRAPPER
+───────────────────────────────────────── */
+.form-wrapper {
+  margin-bottom: 2rem;
+}
+
+/* ─────────────────────────────────────────
+   CARDS GRID
+───────────────────────────────────────── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.1rem;
+}
+
+/* ─────────────────────────────────────────
+   STATES
+───────────────────────────────────────── */
+.loading-text {
+  color: var(--clr-text-muted);
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 3rem 0;
+  font-style: italic;
+  animation: pulseGlow 1.8s ease infinite;
+}
+
+.empty-text {
+  color: var(--clr-text-muted);
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 3rem 0;
+  font-style: italic;
+  animation: fadeIn 0.5s var(--ease) both;
+}
+
+/* ─────────────────────────────────────────
+   FILTER BAR (Lost & Found)
+───────────────────────────────────────── */
+.filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.35s var(--ease) both;
+  animation-delay: 0.1s;
+}
+
+.filter-btn {
+  padding: 0.42rem 1.1rem;
+  border: 1.5px solid var(--clr-border);
+  border-radius: 20px;
+  background: var(--clr-bg-card);
+  font-size: 0.85rem;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 0.2s var(--ease-bounce);
+  color: var(--clr-text-secondary);
+  box-shadow: var(--shadow-xs);
+}
+
+.filter-btn:hover {
+  border-color: var(--clr-primary);
+  color: var(--clr-primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-btn.active {
+  background: var(--clr-primary);
+  border-color: var(--clr-primary);
+  color: #fff;
+  box-shadow: var(--shadow-green);
+  font-weight: 600;
+}
+
+.filter-btn.active:hover {
+  background: var(--clr-primary-dark);
+  border-color: var(--clr-primary-dark);
+}

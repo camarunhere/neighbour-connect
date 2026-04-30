@@ -1,0 +1,65 @@
+/* ── Cursor dot (follows instantly) ── */
+.cursor-dot {
+  position: fixed;
+  top:  -5px;
+  left: -5px;
+  width:  10px;
+  height: 10px;
+  background: var(--clr-primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+  will-change: transform;
+  transition:
+    width   0.18s var(--ease-bounce),
+    height  0.18s var(--ease-bounce),
+    top     0.18s var(--ease-bounce),
+    left    0.18s var(--ease-bounce),
+    background 0.18s var(--ease);
+}
+
+.cursor-dot--hover {
+  width:  14px;
+  height: 14px;
+  top:    -7px;
+  left:   -7px;
+  background: var(--clr-primary-dark);
+}
+
+.cursor-dot--click {
+  width:  8px;
+  height: 8px;
+  top:    -4px;
+  left:   -4px;
+  background: var(--clr-primary-light);
+}
+
+/* ── Cursor ring (follows with lag) ── */
+.cursor-ring {
+  position: fixed;
+  top:  -20px;
+  left: -20px;
+  width:  40px;
+  height: 40px;
+  border: 2px solid rgba(44, 122, 75, 0.55);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  opacity: 0;
+  will-change: transform;
+  transition:
+    width   0.25s var(--ease-bounce),
+    height  0.25s var(--ease-bounce),
+    top     0.25s var(--ease-bounce),
+    left    0.25s var(--ease-bounce),
+    border-color 0.25s var(--ease);
+}
+
+.cursor-ring--hover {
+  width:  60px;
+  height: 60px;
+  top:    -30px;
+  left:   -30px;
+  border-color: rgba(44, 122, 75, 0.30);
+}

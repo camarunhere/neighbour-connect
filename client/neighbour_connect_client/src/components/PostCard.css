@@ -1,0 +1,192 @@
+.post-card {
+  background: var(--clr-bg-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform    0.28s var(--ease-bounce),
+    box-shadow   0.28s var(--ease),
+    border-color 0.28s var(--ease);
+  animation: fadeInUp 0.4s var(--ease) both;
+  will-change: transform;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(44, 122, 75, 0.20);
+}
+
+/* Staggered entrance for up to 6 cards */
+.cards-grid > *:nth-child(1) { animation-delay: 0.04s; }
+.cards-grid > *:nth-child(2) { animation-delay: 0.08s; }
+.cards-grid > *:nth-child(3) { animation-delay: 0.12s; }
+.cards-grid > *:nth-child(4) { animation-delay: 0.16s; }
+.cards-grid > *:nth-child(5) { animation-delay: 0.20s; }
+.cards-grid > *:nth-child(6) { animation-delay: 0.24s; }
+
+/* ── Image ── */
+.post-card-image {
+  width: 100%;
+  height: 185px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s var(--ease);
+}
+
+.post-card:hover .post-card-image {
+  transform: scale(1.04);
+}
+
+/* ── Body ── */
+.post-card-body {
+  padding: 1.25rem 1.3rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Header ── */
+.post-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.55rem;
+}
+
+.post-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--clr-text);
+  margin: 0;
+  line-height: 1.35;
+  transition: color 0.2s;
+}
+
+.post-card:hover .post-card-title {
+  color: var(--clr-primary);
+}
+
+/* ── Status badge ── */
+.post-status-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 0.22rem 0.65rem;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* ── Description ── */
+.post-card-description {
+  font-size: 0.875rem;
+  color: var(--clr-text-secondary);
+  margin: 0 0 0.9rem;
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Footer ── */
+.post-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--clr-text-muted);
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--clr-border);
+}
+
+.post-card-author {
+  font-weight: 600;
+  color: var(--clr-text-secondary);
+}
+
+.post-card-meta {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.post-card-event-date {
+  font-weight: 600;
+  color: var(--clr-primary);
+  background: var(--clr-primary-muted);
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+}
+
+/* ── Vote button ── */
+.vote-btn {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--clr-bg);
+  border: 1.5px solid var(--clr-border);
+  color: var(--clr-text-secondary);
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+}
+
+.vote-btn:hover {
+  border-color: var(--clr-primary);
+  color: var(--clr-primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.vote-btn.voted {
+  background: var(--clr-primary-muted);
+  border-color: var(--clr-primary);
+  color: var(--clr-primary);
+}
+
+.vote-btn.voted:hover {
+  background: var(--clr-primary-muted);
+}
+
+.vote-icon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* ── Delete button ── */
+.post-card-delete {
+  margin-top: 0.85rem;
+  background: transparent;
+  border: 1.5px solid var(--clr-danger);
+  color: var(--clr-danger);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: inherit;
+  width: 100%;
+  transition: background-color 0.2s var(--ease), color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+.post-card-delete:hover {
+  background-color: var(--clr-danger);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(229, 62, 62, 0.30);
+}
+
+.post-card-delete:active {
+  transform: scale(0.97);
+}

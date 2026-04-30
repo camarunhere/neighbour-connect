@@ -1,0 +1,140 @@
+.post-form {
+  background: var(--clr-bg-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  box-shadow: var(--shadow-md);
+  animation: scaleIn 0.3s var(--ease) both;
+  position: relative;
+  overflow: hidden;
+}
+
+.post-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--clr-primary) 0%, var(--clr-primary-light) 100%);
+}
+
+/* ── Title ── */
+.post-form-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--clr-text);
+  margin: 0 0 1.4rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--clr-border);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ── Error ── */
+.post-form-error {
+  background: #fff5f5;
+  border: 1px solid #fed7d7;
+  color: var(--clr-danger);
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  animation: fadeInUp 0.25s var(--ease) both;
+}
+
+/* ── Fields ── */
+.post-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.post-form-field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--clr-text-secondary);
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+.post-form-field input,
+.post-form-field textarea,
+.post-form-field select {
+  padding: 0.6rem 0.875rem;
+  border: 1.5px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  color: var(--clr-text);
+  background: #fafcfb;
+  font-family: inherit;
+  transition: all 0.22s var(--ease);
+  outline: none;
+}
+
+.post-form-field input:focus,
+.post-form-field textarea:focus,
+.post-form-field select:focus {
+  border-color: var(--clr-primary);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(44, 122, 75, 0.12);
+  transform: translateY(-1px);
+}
+
+.post-form-field input:hover,
+.post-form-field textarea:hover,
+.post-form-field select:hover {
+  border-color: #a0aec0;
+}
+
+.post-form-field textarea {
+  resize: vertical;
+  min-height: 85px;
+  line-height: 1.5;
+}
+
+/* File input special styling */
+.post-form-field input[type="file"] {
+  padding: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--clr-text-muted);
+  background: var(--clr-bg);
+}
+
+/* ── Submit button ── */
+.post-form-submit {
+  background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-primary-dark) 100%);
+  color: #fff;
+  border: none;
+  padding: 0.72rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: inherit;
+  width: 100%;
+  transition: all 0.25s var(--ease-bounce);
+  box-shadow: var(--shadow-green);
+  letter-spacing: 0.2px;
+  margin-top: 0.25rem;
+}
+
+.post-form-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(44, 122, 75, 0.38);
+}
+
+.post-form-submit:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: var(--shadow-green);
+}
+
+.post-form-submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}

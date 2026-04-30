@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd client/neighbour_connect_client && npm install && npm run build",
+  "outputDirectory": "client/neighbour_connect_client/dist",
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+}
